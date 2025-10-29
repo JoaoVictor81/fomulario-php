@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD']==='POST'){
     if(isset($_FILES ['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK){
         $nomeTemporario = $_FILES ['arquivo']['tmp_name'];
-        $nomeDefinitivo = "uploads/" . basename($_FILES["aquivo"]["name"]);
+        $nomeDefinitivo = "uploads/" . basename($_FILES["arquivo"]["name"]);
 
         if (!is_dir('uploads')) {
             mkdir('uploads', 0777, true);
@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
     }else{
         echo "<p>nenhum arquivo foi selecionado</p>";
     }}
+
 
 
 ?>
